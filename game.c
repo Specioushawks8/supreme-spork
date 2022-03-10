@@ -50,7 +50,8 @@ int main( ) {
 	
 	//pointer to arrray
 	char * array = createArray(); 
-
+	
+	printf( "Program works correctly\n" ); 
 		
 
 }// end 
