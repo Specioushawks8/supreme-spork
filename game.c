@@ -2,11 +2,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+void printArray( char *p, int size  ) {
+
+
+	if( p != NULL ) {
+
+		for( int i = 0; i < size; ++i ) {
+
+			printf( "%c ", *(p + i) );
+		}// end for 
+
+		puts( "" ) ;
+
+	}// end if 
+}// end printArray	
+
 void removeElement(char *array, char letter ) {
 	
-	//thou shall never open a pointer untill you know it it not NULL
+	//thou shall never open a pointer until you know it it not NULL!
 
-	//chekcs to make sure array is not null
+	//checks to make sure array is not null
 	if( array != NULL ) {
 
 		for( int i = 0; i < 26; ++i ) {
@@ -42,15 +58,19 @@ int main( ) {
 	//asks how many players are involved 
 	int numUserInput; 
 	puts( "how many players are playing? 1 or 2" );
+	//pointer to array
+	char * array = createArray(); 
 	scanf( "%d", &numUserInput ); 
 
+
+	printArray( array, 26 ); 
 	char userInput; 
 	puts( "Enter a character: " ); 
 	scanf( " %c", &userInput ); 
 	
-	//pointer to arrray
-	char * array = createArray(); 
 	
+	removeElement( array, userInput );
+	printArray( array, 26 ); 	
 	printf( "Program works correctly\n" ); 
 		
 
