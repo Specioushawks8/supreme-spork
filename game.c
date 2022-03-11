@@ -37,6 +37,26 @@ char * createArray( ) {
 
 }// end createArray	
 
+void introDisplay1() {
+
+    printf("{}   {}   {}{}}   {}    {}   {}{}{}    {}    {}   {}{}}   {}    {}\n");
+    printf("{}   {}  {}   {}  {}{}  {}  {}         {}{} {}}  {}   {}  {}{}  {}\n");
+    printf("{}{ }{}  {}{ }{}  {} {} {}  {} {}{}    {} {} {}  {}{ }{}  {} {} {}\n");
+    printf("{}   {}  {}   {}  {}  {}{}  {}   {}    {} {} {}  {}   {}  {}  {}{}\n");
+    printf("{}   {}  {}   {}  {}   {}{   {}{}{}    {} {} {}  {}   {}  {}   {}{\n");
+    printf("------------------------------------------------------------------\n\n\n");
+    printf(" ----------             |---------------------------|\n");
+    printf("|         |             |           Menu            |\n");
+    printf("|         |             |***************************|\n");
+    printf("|                       | <1> player solo           |\n");
+    printf("|                       | <2> player vs. player     |\n");
+    printf("|                       | <3> quit game             |\n");
+    printf("|                       |                           |\n");
+    printf("|__________             |---------------------------|\n");
+    printf("/_________/|\n");
+    printf("|________|/\n");
+
+} // end introDisplay1
 
 int main( ) {
 	//asks how many players are involved 
