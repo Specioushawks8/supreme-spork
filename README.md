@@ -1,4 +1,4 @@
-# supreme-spork
+# supreme-spork 
 
 created by : Nadia Orona and Edy Swedberg 
 
@@ -7,4 +7,5 @@ This video game will be using the c language.
 
 rules will be listed below.
  
-This is a line to test git
+This is a line to test git. Testing. 	
+
