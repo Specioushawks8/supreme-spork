@@ -37,6 +37,17 @@ char * createArray( ) {
 
 }// end createArray	
 
+void printArray( char *p, int size  ) {
+
+	if( p != NULL ) {
+		for( int i = 0; i < size; ++i ) {
+			printf( "%c ", *(p + i) );
+		}// end for 
+	puts( "" ) ;
+							
+	}// end if 
+}// end printArray	
+
 void introDisplay1() {
 
     printf("{}   {}   {}{}}   {}    {}   {}{}{}    {}    {}   {}{}}   {}    {}\n");
@@ -61,17 +72,26 @@ void introDisplay1() {
 int main( ) {
 	//asks how many players are involved 
 	int numUserInput; 
-	puts( "how many players are playing? 1 or 2" );
-	scanf( "%d", &numUserInput ); 
+	char userInput;
+	introDisplay1();
+        
+	char * array = createArray();
 
-	char userInput; 
-	puts( "Enter a character: " ); 
-	scanf( " %c", &userInput ); 
-	
-	//pointer to arrray
-	char * array = createArray(); 
+	while (numUserInput != 3) { 
+		if (numUserInput == 1) { 		 
+			puts( "Enter character: " ); 
+			scanf( " %c", &userInput );
+			// remove element entered by user 
+			removeElement(array, userInput);
+			printArray(array, 26);
+		 } // end if
+		
+	puts( "Enter choice: " ); 
+	scanf( " %d", &numUserInput ); 
+	} // end while
+
 	
 	printf( "Program works correctly\n" ); 
 		
-
+ 
 }// end 
