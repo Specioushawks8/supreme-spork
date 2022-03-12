@@ -2,27 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-void printArray( char *p, int size  ) {
-
-
-	if( p != NULL ) {
-
-		for( int i = 0; i < size; ++i ) {
-
-			printf( "%c ", *(p + i) );
-		}// end for 
-
-		puts( "" ) ;
-
-	}// end if 
-}// end printArray	
-
 void removeElement(char *array, char letter ) {
 	
-	//thou shall never open a pointer until you know it it not NULL!
+	//thou shall never open a pointer untill you know it it not NULL
 
-	//checks to make sure array is not null
+	//chekcs to make sure array is not null
 	if( array != NULL ) {
 
 		for( int i = 0; i < 26; ++i ) {
@@ -53,25 +37,67 @@ char * createArray( ) {
 
 }// end createArray	
 
+void printArray( char *p, int size  ) {
 
+	if( p != NULL ) {
+		for( int i = 0; i < size; ++i ) {
+			printf( "%c ", *(p + i) );
+		}// end for 
+	puts( "" ) ;
+							
+	}// end if 
+}// end printArray	
+
+void introDisplay1() {
+
+    printf("{}   {}   {}{}}   {}    {}   {}{}{}    {}    {}   {}{}}   {}    {}\n");
+    printf("{}   {}  {}   {}  {}{}  {}  {}         {}{} {}}  {}   {}  {}{}  {}\n");
+    printf("{}{ }{}  {}{ }{}  {} {} {}  {} {}{}    {} {} {}  {}{ }{}  {} {} {}\n");
+    printf("{}   {}  {}   {}  {}  {}{}  {}   {}    {} {} {}  {}   {}  {}  {}{}\n");
+    printf("{}   {}  {}   {}  {}   {}{   {}{}{}    {} {} {}  {}   {}  {}   {}{\n");
+    printf("------------------------------------------------------------------\n\n\n");
+    printf(" ----------             |---------------------------|\n");
+    printf("|         |             |           Menu            |\n");
+    printf("|         |             |***************************|\n");
+    printf("|                       | <1> player solo           |\n");
+    printf("|                       | <2> player vs. player     |\n");
+    printf("|                       | <3> quit game             |\n");
+    printf("|                       |                           |\n");
+    printf("|__________             |---------------------------|\n");
+    printf("/_________/|\n");
+    printf("|________|/\n");
+
+} // end introDisplay1
+
+
+void playOptionOne( int *numUserInput, char *array ) {
+	char userInput = 0; 
+	printf( "%d\n", *numUserInput  );
+	printArray( array, 26 ); 
+	
+
+
+}//end playOptionOne
 int main( ) {
 	//asks how many players are involved 
-	int numUserInput; 
-	puts( "how many players are playing? 1 or 2" );
-	//pointer to array
-	char * array = createArray(); 
-	scanf( "%d", &numUserInput ); 
+	int numUserInput = 1; 
+	int *p_numUserInput = &numUserInput; 
 
+	introDisplay1();
+        
+	char *p_array = createArray();
 
-	printArray( array, 26 ); 
-	char userInput; 
-	puts( "Enter a character: " ); 
-	scanf( " %c", &userInput ); 
+	while (numUserInput != 3) { 
+		if (numUserInput == 1) { 	
+			playOptionOne( p_numUserInput, p_array  ); 		
+		} // end if
+		
+	puts( "Enter choice: " ); 
+	scanf( " %d", &numUserInput ); 
+	} // end while
+
 	
-	
-	removeElement( array, userInput );
-	printArray( array, 26 ); 	
 	printf( "Program works correctly\n" ); 
 		
-
+ 
 }// end 
